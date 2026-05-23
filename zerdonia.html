@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+  <title>Zerdonia | Premium Pet Care</title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <script src="https://kit.fontawesome.com/4d9f4d2b2d.js"
+          crossorigin="anonymous"></script>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+
+      --orange:#ff9d5c;
+      --orange2:#ffb07c;
+      --cream:#fff8f2;
+      --brown:#5d4037;
+      --glass:rgba(255,255,255,.25);
+
+      --shadow:
+      0 15px 40px rgba(255,157,92,.18);
+
+      --shadowHover:
+      0 25px 60px rgba(255,157,92,.28);
+
+    }
+
+    body{
+
+      font-family:'Inter',sans-serif;
+
+      background:
+      linear-gradient(
+      180deg,
+      #fff8f2,
+      #fff0e5
+      );
+
+      color:#3d2b22;
+
+      overflow-x:hidden;
+
+    }
+
+    body::before{
+
+      content:'';
+
+      position:fixed;
+
+      width:500px;
+      height:500px;
+
+      background:
+      radial-gradient(circle,#ffbf96,transparent);
+
+      top:-150px;
+      right:-100px;
+
+      opacity:.25;
+
+      filter:blur(50px);
+
+      z-index:-1;
+
+    }
+
+    body::after{
+
+      content:'';
+
+      position:fixed;
+
+      width:450px;
+      height:450px;
+
+      background:
+      radial-gradient(circle,#ffd7c0,transparent);
+
+      bottom:-150px;
+      left:-120px;
+
+      opacity:.25;
+
+      filter:blur(60px);
+
+      z-index:-1;
+
+    }
+
+    /* NAVBAR */
+
+    nav{
+
+      position:fixed;
+
+      width:100%;
+
+      top:0;
+      left:0;
+
+      padding:20px 8%;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      backdrop-filter:blur(20px);
+
+      background:rgba(255,255,255,.35);
+
+      z-index:999;
+
+      border-bottom:1px solid rgba(255,255,255,.2);
+
+    }
+
+    .logo{
+
+      font-size:32px;
+      font-weight:800;
+
+      color:var(--brown);
+
+      font-family:'Poppins',sans-serif;
+
+    }
+
+    .nav-links{
+
+      display:flex;
+      gap:30px;
+      align-items:center;
+
+    }
+
+    .nav-links a{
+
+      text-decoration:none;
+
+      color:#5d4037;
+
+      font-weight:600;
+
+      transition:.3s;
+
+    }
+
+    .nav-links a:hover{
+      color:var(--orange);
+    }
+
+    .btn{
+
+      display:inline-block;
+
+      padding:16px 32px;
+
+      border-radius:60px;
+
+      background:
+      linear-gradient(
+      135deg,
+      var(--orange),
+      var(--orange2)
+      );
+
+      color:white;
+
+      text-decoration:none;
+
+      font-weight:700;
+
+      border:none;
+
+      cursor:pointer;
+
+      box-shadow:var(--shadow);
+
+      transition:.4s;
+
+    }
+
+    .btn:hover{
+
+      transform:translateY(-6px);
+
+      box-shadow:var(--shadowHover);
+
+    }
+
+    section{
+
+      padding:110px 8%;
+
+      position:relative;
+
+    }
+
+    /* HERO */
+
+    .hero{
+
+      min-height:100vh;
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      align-items:center;
+
+      gap:60px;
+
+      padding-top:140px;
+
+    }
+
+    .hero h1{
+
+      font-size:74px;
+
+      line-height:1.05;
+
+      margin-bottom:25px;
+
+      font-family:'Poppins',sans-serif;
+
+    }
+
+    .hero p{
+
+      font-size:20px;
+
+      line-height:1.8;
+
+      margin-bottom:35px;
+
+      color:#6d5549;
+
+    }
+
+    .hero-buttons{
+
+      display:flex;
+
+      gap:20px;
+
+      flex-wrap:wrap;
+
+    }
+
+    .glass{
+
+      background:var(--glass);
+
+      backdrop-filter:blur(20px);
+
+      border:1px solid rgba(255,255,255,.2);
+
+      border-radius:30px;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .hero-card{
+
+      height:600px;
+
+      overflow:hidden;
+
+      position:relative;
+
+      animation:float 5s ease-in-out infinite;
+
+    }
+
+    .hero-card img{
+
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+    }
+
+    .paw{
+
+      position:absolute;
+
+      font-size:40px;
+
+      opacity:.4;
+
+      animation:float 4s ease-in-out infinite;
+
+    }
+
+    .paw1{
+      top:50px;
+      left:-20px;
+    }
+
+    .paw2{
+      bottom:80px;
+      right:-20px;
+    }
+
+    @keyframes float{
+
+      0%,100%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-15px);
+      }
+
+    }
+
+    /* TITLES */
+
+    .section-title{
+
+      text-align:center;
+
+      margin-bottom:60px;
+
+    }
+
+    .section-title h2{
+
+      font-size:52px;
+
+      margin-bottom:15px;
+
+      font-family:'Poppins',sans-serif;
+
+    }
+
+    /* ABOUT */
+
+    .about{
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:60px;
+
+      align-items:center;
+
+    }
+
+    .about img{
+
+      width:100%;
+
+      border-radius:30px;
+
+      box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+    }
+
+    .about-content{
+
+      padding:50px;
+
+    }
+
+    .about-content h2{
+
+      font-size:50px;
+
+      margin-bottom:20px;
+
+    }
+
+    /* GRID */
+
+    .video-grid,
+    .products-grid,
+    .tips-grid,
+    .ebook-grid{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(280px,1fr));
+
+      gap:30px;
+
+    }
+
+    .video-card,
+    .product-card,
+    .tip-card,
+    .ebook-card{
+
+      padding:20px;
+
+      transition:.4s;
+
+    }
+
+    .video-card:hover,
+    .product-card:hover,
+    .tip-card:hover,
+    .ebook-card:hover{
+
+      transform:translateY(-10px);
+
+      box-shadow:var(--shadowHover);
+
+    }
+
+    iframe{
+
+      width:100%;
+      height:240px;
+
+      border:none;
+
+      border-radius:20px;
+
+      margin-bottom:20px;
+
+    }
+
+    .product-card img,
+    .ebook-card img{
+
+      width:100%;
+      height:240px;
+
+      object-fit:cover;
+
+      border-radius:25px;
+
+      margin-bottom:20px;
+
+    }
+
+    .product-card h3,
+    .ebook-card h3,
+    .tip-card h3{
+
+      margin-bottom:10px;
+
+      font-size:26px;
+
+    }
+
+    .tip-card p{
+      line-height:1.8;
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter{
+
+      text-align:center;
+
+    }
+
+    .newsletter-box{
+
+      max-width:850px;
+
+      margin:auto;
+
+      padding:70px 40px;
+
+    }
+
+    .newsletter h2{
+
+      font-size:50px;
+
+      margin-bottom:20px;
+
+    }
+
+    .newsletter-form{
+
+      display:flex;
+
+      gap:20px;
+
+      margin-top:35px;
+
+      justify-content:center;
+
+      flex-wrap:wrap;
+
+    }
+
+    .newsletter-form input{
+
+      width:380px;
+
+      padding:18px 24px;
+
+      border:none;
+
+      border-radius:60px;
+
+      outline:none;
+
+      font-size:16px;
+
+    }
+
+    /* FOOTER */
+
+    footer{
+
+      padding:80px 8% 40px;
+
+      background:
+      linear-gradient(
+      180deg,
+      transparent,
+      #ffe5d5
+      );
+
+    }
+
+    .footer-grid{
+
+      display:flex;
+
+      justify-content:space-between;
+
+      gap:40px;
+
+      flex-wrap:wrap;
+
+      margin-bottom:40px;
+
+    }
+
+    .socials{
+
+      display:flex;
+
+      gap:15px;
+
+      margin-top:20px;
+
+    }
+
+    .socials a{
+
+      width:45px;
+      height:45px;
+
+      border-radius:50%;
+
+      background:white;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      color:var(--orange);
+
+      text-decoration:none;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .copyright{
+
+      text-align:center;
+
+      border-top:1px solid rgba(0,0,0,.08);
+
+      padding-top:25px;
+
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px){
+
+      .hero,
+      .about{
+
+        grid-template-columns:1fr;
+
+      }
+
+      .hero h1{
+
+        font-size:52px;
+
+      }
+
+      .section-title h2,
+      .about-content h2,
+      .newsletter h2{
+
+        font-size:38px;
+
+      }
+
+      .nav-links{
+
+        display:none;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+      Zerdonia
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#">Home</a>
+
+      <a href="#ebooks">Ebooks</a>
+
+      <a href="#products">Products</a>
+
+      <a href="#tips">Tips</a>
+
+      <a href="https://www.youtube.com/@zerdonia"
+         target="_blank"
+         class="btn">
+
+         Join Community
+
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div>
+
+      <h1>
+
+        Helping Pets <br>
+        Live Happier Lives
+
+      </h1>
+
+      <p>
+
+        Emotional rescue stories,
+        grooming tips, trusted pet care guides,
+        and premium pet essentials for loving pet parents.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#ebooks" class="btn">
+          Shop Ebooks
+        </a>
+
+        <a href="#products" class="btn">
+          Explore Products
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-card glass">
+
+      <div class="paw paw1">🐾</div>
+
+      <div class="paw paw2">🐾</div>
+
+      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop">
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section>
+
+    <div class="about">
+
+      <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="about-content glass">
+
+        <h2>
+          About Zerdonia
+        </h2>
+
+        <p>
+
+          Zerdonia is a modern emotional pet care creator brand
+          built around rescue stories, pet grooming,
+          education, and trusted products.
+
+        </p>
+
+        <br>
+
+        <p>
+
+          Through storytelling and premium resources,
+          Zerdonia helps pet lovers care for animals
+          with warmth and compassion.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VIDEOS -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>
+        Featured Rescue Stories
+      </h2>
+
+      <p>
+        Emotional pet rescue videos and heartwarming moments.
+      </p>
+
+    </div>
+
+    <div class="video-grid">
+
+      <div class="video-card glass">
+
+        <iframe
+        src="https://www.youtube.com/embed/tKzYnSjrVhw"
+        allowfullscreen>
+        </iframe>
+
+        <h3>
+          Emotional Pet Rescue Story
+        </h3>
+
+      </div>
+
+      <div class="video-card glass">
+
+        <iframe
+        src="https://www.youtube.com/embed/tcrL376yFH4"
+        allowfullscreen>
+        </iframe>
+
+        <h3>
+          Heartwarming Pet Moment
+        </h3>
+
+      </div>
+
+      <div class="video-card glass">
+
+        <iframe
+        src="https://www.youtube.com/embed/9vrRXuvVoa8"
+        allowfullscreen>
+        </iframe>
+
+        <h3>
+          Pet Care & Rescue
+        </h3>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EBOOKS -->
+
+  <section id="ebooks">
+
+    <div class="section-title">
+
+      <h2>
+        Premium Pet Care Ebooks
+      </h2>
+
+      <p>
+
+        Beautiful digital guides for grooming,
+        rescue care, bonding, and pet wellness.
+
+      </p>
+
+    </div>
+
+    <div class="ebook-grid">
+
+      <div class="ebook-card glass">
+
+        <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>
+          Ultimate Pet Care Guide
+        </h3>
+
+        <p>
+
+          Learn rescue care,
+          emotional bonding,
+          grooming, and pet health.
+
+        </p>
+
+        <br>
+
+        <a href="https://ebook.com"
+           target="_blank"
+           class="btn">
+
+           Buy Ebook
+
+        </a>
+
+      </div>
+
+      <div class="ebook-card glass">
+
+        <img src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>
+          Cat Happiness Handbook
+        </h3>
+
+        <p>
+
+          A cozy guide for caring
+          and bonding with cats.
+
+        </p>
+
+        <br>
+
+        <a href="https://ebook.com"
+           target="_blank"
+           class="btn">
+
+           Buy Ebook
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section id="products">
+
+    <div class="section-title">
+
+      <h2>
+        Featured Pet Products
+      </h2>
+
+      <p>
+
+        Curated premium affiliate products
+        trusted by pet lovers worldwide.
+
+      </p>
+
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card glass">
+
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>
+          Premium Cat Collar
+        </h3>
+
+        <p>
+
+          Soft comfortable collar
+          designed for stylish cats.
+
+        </p>
+
+        <br>
+
+        <a href="https://share.google/3ld1b62bztrTvoJyC"
+           target="_blank"
+           class="btn">
+
+           Check Product
+
+        </a>
+
+      </div>
+
+      <div class="product-card glass">
+
+        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>
+          Luxury Dog Collar
+        </h3>
+
+        <p>
+
+          Premium modern collar
+          made for comfort and durability.
+
+        </p>
+
+        <br>
+
+        <a href="https://share.google/u2i6qdINnrntLybqW"
+           target="_blank"
+           class="btn">
+
+           Check Product
+
+        </a>
+
+      </div>
+
+      <div class="product-card glass">
+
+        <img src="https://images.unsplash.com/photo-1583512603806-077998240c7a?q=80&w=1200&auto=format&fit=crop">
+
+        <h3>
+          Healthy Dog Food
+        </h3>
+
+        <p>
+
+          Nutritious food designed
+          for healthy active dogs.
+
+        </p>
+
+        <br>
+
+        <a href="https://share.google/1aDx5g3S3xRHfdxnx"
+           target="_blank"
+           class="btn">
+
+           Check Product
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PET CARE TIPS -->
+
+  <section id="tips">
+
+    <div class="section-title">
+
+      <h2>
+        Expert Pet Care Tips
+      </h2>
+
+      <p>
+
+        Helpful daily pet care advice for healthier,
+        happier, and emotionally connected pets.
+
+      </p>
+
+    </div>
+
+    <div class="tips-grid">
+
+      <div class="tip-card glass">
+
+        <h3>
+          🐶 Healthy Grooming Routine
+        </h3>
+
+        <p>
+
+          Brush your pet regularly to reduce shedding,
+          improve skin health, and strengthen emotional bonding.
+          Gentle grooming helps pets feel relaxed and safe.
+
+        </p>
+
+      </div>
+
+      <div class="tip-card glass">
+
+        <h3>
+          🐱 Clean Water Daily
+        </h3>
+
+        <p>
+
+          Always provide fresh clean water every day.
+          Hydration supports healthy digestion,
+          energy levels, and shiny fur.
+
+        </p>
+
+      </div>
+
+      <div class="tip-card glass">
+
+        <h3>
+          ❤️ Emotional Bonding Time
+        </h3>
+
+        <p>
+
+          Spend time daily playing, cuddling,
+          or talking with your pet.
+          Emotional connection reduces stress and anxiety.
+
+        </p>
+
+      </div>
+
+      <div class="tip-card glass">
+
+        <h3>
+          🍖 Balanced Nutrition
+        </h3>
+
+        <p>
+
+          Feed pets high-quality nutritious food.
+          Always check ingredients before buying pet food products.
+
+        </p>
+
+      </div>
+
+      <div class="tip-card glass">
+
+        <h3>
+          🚶 Daily Exercise Matters
+        </h3>
+
+        <p>
+
+          Walks and active playtime keep pets healthy,
+          mentally stimulated, and emotionally happy.
+
+        </p>
+
+      </div>
+
+      <div class="tip-card glass">
+
+        <h3>
+          🩺 Regular Vet Checkups
+        </h3>
+
+        <p>
+
+          Routine veterinary visits help detect health issues early
+          and improve long-term wellbeing.
+
+        </p>
+
+      </div>
+
+      <div class="tip-card glass">
+
+        <h3>
+          🏠 Safe Cozy Environment
+        </h3>
+
+        <p>
+
+          Create a peaceful comfortable space
+          where pets can rest and feel emotionally secure.
+
+        </p>
+
+      </div>
+
+      <div class="tip-card glass">
+
+        <h3>
+          🐾 Positive Training
+        </h3>
+
+        <p>
+
+          Use rewards and positive reinforcement
+          instead of punishment for better trust and learning.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- NEWSLETTER -->
+
+  <section class="newsletter">
+
+    <div class="newsletter-box glass">
+
+      <h2>
+
+        Get a Free Pet Care Checklist
+
+      </h2>
+
+      <p>
+
+        Join the Zerdonia community and receive
+        rescue stories, grooming tips,
+        pet care resources, and updates.
+
+      </p>
+
+      <form
+      action="https://formsubmit.co/zerdonia07@gmail.com"
+      method="POST"
+      class="newsletter-form">
+
+        <input
+        type="hidden"
+        name="_captcha"
+        value="false">
+
+        <input
+        type="hidden"
+        name="_next"
+        value="https://www.youtube.com/@zerdonia">
+
+        <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required>
+
+        <button type="submit" class="btn">
+
+          Join Community
+
+        </button>
+
+      </form>
+
+      <br><br>
+
+      <a href="https://www.youtube.com/@zerdonia"
+         target="_blank"
+         class="btn">
+
+         Visit YouTube Channel
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h2>
+          Zerdonia
+        </h2>
+
+        <br>
+
+        <p>
+
+          Modern emotional pet care creator brand
+          focused on rescue, grooming,
+          education, and trusted pet products.
+
+        </p>
+
+        <div class="socials">
+
+          <a href="https://www.youtube.com/@zerdonia"
+             target="_blank">
+
+            <i class="fab fa-youtube"></i>
+
+          </a>
+
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-tiktok"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-pinterest"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <h3>
+          Pages
+        </h3>
+
+        <br>
+
+        <p>Home</p>
+        <p>Ebooks</p>
+        <p>Products</p>
+
+      </div>
+
+      <div>
+
+        <h3>
+          Resources
+        </h3>
+
+        <br>
+
+        <p>Pet Tips</p>
+        <p>Rescue Stories</p>
+        <p>Affiliate Picks</p>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+
+      © 2026 Zerdonia — All Rights Reserved.
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
